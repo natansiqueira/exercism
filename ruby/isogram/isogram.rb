@@ -1,6 +1,6 @@
 module Isogram
   def self.isogram?(phrase)
-    phrase = phrase.split(/\W+/).join.downcase
-    phrase.size == phrase.split('').to_set.size
+    phrase = phrase.downcase.scan(/\w/)
+    phrase.uniq == phrase
   end
 end
