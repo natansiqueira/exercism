@@ -1,6 +1,7 @@
 module Acronym
   def self.abbreviate(phrase)
-    phrase.scan(/\b[a-zA-Z]/)
+    first_letters = /\b[a-zA-Z]/
+    phrase.scan(first_letters)
       .each_with_object('') { |word, acronym| acronym << word[0] }
       .upcase
   end
